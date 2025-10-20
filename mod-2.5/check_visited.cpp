@@ -3,7 +3,7 @@ using namespace std;
 vector<int>adj[1000];
 bool vis[1000];
 
-void bsf(int src){
+void bfs(int src){
     queue<int> q;
     q.push(src);
     vis[src]=true;
@@ -39,6 +39,13 @@ while (e--)
 }
 
 memset(vis,false,sizeof(vis));
-bsf(0);
+
+   int src,dst;
+    cin >> src >> dst;
+    bfs(src);
+        if(vis[dst])
+        cout << "YES\n";
+    else
+        cout << "NO\n";
     return 0;
 }
